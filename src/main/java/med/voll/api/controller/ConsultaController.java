@@ -29,6 +29,8 @@ public class ConsultaController {
         return ResponseEntity.ok(dto);
     }
 
+    @PostMapping
+    @Transactional
     public ResponseEntity cancelar(@RequestBody @Valid DadosCancelamentoConsulta dados) {
         agenda.cancelar(dados);
         return ResponseEntity.noContent().build();
